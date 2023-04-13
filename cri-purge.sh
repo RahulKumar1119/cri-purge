@@ -118,7 +118,7 @@ __process_images() {
       # print last line of the array, should be one to keep.
       echo " - Keep TAG: $(printf %s\\n "${IMAGES[@]: -2}"| awk '{ printf "%s (%s)\n", $2, $4 }')"
 
-      for (( i=0; i<$(( ${#IMAGES[@]}-1 )); i++ )) 
+      for (( i=0; i<$(( ${#IMAGES[@]}-2 )); i++ )) 
       do
         # Remove image if $1 == "PURGE"
         if [ "${1^^}" == "PURGE" ]; then
